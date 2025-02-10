@@ -417,7 +417,7 @@ Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj, Rcpp::Nullable<double> t = R_
     const double ofs = 2.0 * (ptr->age() - Rcpp::as<double>(t));
     const int tips = ptr->nspecie();
     for (int i = 0; i < tips; ++i) {
-      for (int j = 0; j < tips; ++i) {
+      for (int j = 0; j < tips; ++j) {
         if (i != j) res(i, j) -= ofs;
       }
     }
