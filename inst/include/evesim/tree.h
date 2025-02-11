@@ -33,7 +33,12 @@ namespace tres_sim {
     // solves for 'i' in node.desc[i] == idx.
     int desc_idx(int idx) const noexcept { return static_cast<int>(desc[0] != idx); }
     
-    friend bool operator==(const node_t&, const node_t&) = default;   // for debugging
+    friend bool operator==(const node_t& a, const node_t& b) noexcept {    // for debugging
+      return (a.t == b.t)
+          && (a.ances == b.ances)
+          && (a.desc == b.desc)
+          && (a.label == b.label);
+    }
   };
 
 

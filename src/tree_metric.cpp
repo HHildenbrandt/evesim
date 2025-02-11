@@ -4,7 +4,6 @@
 #include <tuple>
 #include <stack>
 #include <deque>
-#include <span>
 #include <numeric>
 #include <memory>
 #include <functional>
@@ -169,9 +168,9 @@ namespace tres_sim {
       rutils::tbb_global_control_guard gc{};
       tbb::parallel_for(tbb::blocked_range<int>(0, tips), [&](const auto& r) {
         for (int i = r.begin(); i != r.end(); ++i) {
-          auto Di = std::span<double>(dd.begin() + i * tips, tips);
+          double* Di = dd.begin() + i * tips;
           Di[i] = std::numeric_limits<double>::max();
-          D[i] = *std::min_element(Di.begin(), Di.end());
+          D[i] = *std::min_element(Di, Di + tips);
         }
       });
     }

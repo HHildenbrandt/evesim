@@ -12,14 +12,6 @@
 
 namespace tres_sim { 
 
-  // fast integer log2
-  template <typename T>
-  constexpr int int_log2(T x) noexcept {
-    static_assert(std::is_integral_v<T>);
-    return (CHAR_BIT * sizeof(T)) - (1 + std::countl_zero(x));
-  }
-
-
   // ape::phylo wrapper 
   class phylo_t {
   public:
