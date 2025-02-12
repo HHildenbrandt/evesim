@@ -9,9 +9,9 @@ Authors@R:
            comment = c(ORCID = "0000-0002-6784-1037"))
 Description: Rcpp backend for eve and DDD
 License: MIT
-Depends: R (>= 4.2.0)
+Depends: R (>= 4.4.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 SystemRequirements: C++17
-LinkingTo: Rcpp (>= 1.0.11), RcppParallel
+LinkingTo: Rcpp (>= 1.0.14), RcppParallel (>= 5.1.10)
